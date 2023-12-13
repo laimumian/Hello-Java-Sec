@@ -51,7 +51,6 @@ java -jar target/hello-1.0.0-SNAPSHOT.jar
 
 ### Docker运行
 ```
-mvn clean package
 ./deploy.sh
 ```
 ![](media/16512152886514.jpg)
