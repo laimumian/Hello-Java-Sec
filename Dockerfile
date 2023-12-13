@@ -9,4 +9,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:11-jre-slim
 WORKDIR /app
 COPY --from=build /app/target/javasec-1.11.jar /app/myapp.jar
-CMD ["java","-jar","/root/Hello_Java_Sec/myapp.jar"]
+CMD ["java","-jar","/app/myapp.jar"]
