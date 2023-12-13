@@ -1,1 +1,1 @@
-docker build -t javasec . && docker run -d -p 80:8888 -v logs:/logs javasec
+docker build -t hellojavasec . && docker run -itd -p 8888:8888 -v logs:/logs hellojavasec
