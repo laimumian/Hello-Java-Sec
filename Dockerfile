@@ -1,11 +1,9 @@
-# 构建阶段
-FROM maven:3.6.3-openjdk-8-slim AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
-
 # 运行阶段
+# 设置基础镜像
 FROM openjdk:8-jre-slim
+# 设置工作目录为 /app
 WORKDIR /app
-COPY --from=build /app/target/javasec-1.11.jar /app/myapp.jar
-CMD ["java", "-jar", "/app/myapp.jar"]
+# 将当前目录下的所有文件复制到容器的 /app 目录中
+COPY  . .
+# 在后台运行 Java 应用程序，同时使用指定的 Java 代理和jar包
+RUN  nohup java -javaagent:/app/iast_agent.jar -jar /app/target/javasec-1.11.jar  &
