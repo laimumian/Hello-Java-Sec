@@ -43,7 +43,7 @@ spring.datasource.password=1234567
 ### Jar运行
 > JDK 1.8环境
 ```
-git clone https://github.com/j3ers3/Hello-Java-Sec
+git clone https://github.com/laimumian/Hello-Java-Sec.git
 cd Hello-Java-Sec
 mvn clean package -DskipTests
 java -jar target/hello-1.0.0-SNAPSHOT.jar
